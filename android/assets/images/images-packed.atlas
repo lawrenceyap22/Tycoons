@@ -1,0 +1,339 @@
+
+images-packed.png
+size: 1019,1021
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+BG_Property&MarketDivider
+  rotate: false
+  xy: 2, 468
+  size: 986, 26
+  orig: 986, 26
+  offset: 0, 0
+  index: -1
+Bar_MarketSlider
+  rotate: false
+  xy: 2, 496
+  size: 990, 189
+  orig: 990, 189
+  offset: 0, 0
+  index: -1
+Bar_ResourceCollected_BG
+  rotate: false
+  xy: 2, 911
+  size: 1016, 110
+  orig: 1016, 110
+  offset: 0, 0
+  index: -1
+Bar_ResourceCollected_Full
+  rotate: false
+  xy: 2, 799
+  size: 1016, 110
+  orig: 1016, 110
+  offset: 0, 0
+  index: -1
+Bar_ResourceCollected_Highlight
+  rotate: false
+  xy: 2, 687
+  size: 1016, 110
+  orig: 1016, 110
+  offset: 0, 0
+  index: -1
+Bar_TimeLeft_Full
+  rotate: false
+  xy: 376, 6
+  size: 438, 72
+  orig: 438, 72
+  offset: 0, 0
+  index: -1
+Button_BuyProperty_Clicked
+  rotate: false
+  xy: 2, 80
+  size: 436, 386
+  orig: 436, 386
+  offset: 0, 0
+  index: -1
+Button_BuyProperty_Neutral
+  rotate: false
+  xy: 440, 80
+  size: 435, 386
+  orig: 435, 386
+  offset: 0, 0
+  index: -1
+Button_HomeTabDrawer_Pulldown
+  rotate: false
+  xy: 2, 2
+  size: 185, 76
+  orig: 185, 76
+  offset: 0, 0
+  index: -1
+Button_HomeTabDrawer_Pullup
+  rotate: false
+  xy: 189, 2
+  size: 185, 76
+  orig: 185, 76
+  offset: 0, 0
+  index: -1
+Icon_Money
+  rotate: false
+  xy: 877, 343
+  size: 142, 123
+  orig: 142, 123
+  offset: 0, 0
+  index: -1
+Icon_Properties
+  rotate: false
+  xy: 877, 93
+  size: 141, 123
+  orig: 141, 123
+  offset: 0, 0
+  index: -1
+Icon_Research
+  rotate: false
+  xy: 877, 218
+  size: 142, 123
+  orig: 142, 123
+  offset: 0, 0
+  index: -1
+
+images-packed2.png
+size: 992,1001
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+BG_ProducedResource
+  rotate: false
+  xy: 413, 232
+  size: 396, 309
+  orig: 396, 309
+  offset: 0, 0
+  index: -1
+BG_SelectedProperty
+  rotate: false
+  xy: 413, 543
+  size: 436, 385
+  orig: 436, 385
+  offset: 0, 0
+  index: -1
+BG_SelectedResource
+  rotate: false
+  xy: 811, 379
+  size: 147, 162
+  orig: 147, 162
+  offset: 0, 0
+  index: -1
+Bar_Research_BG
+  rotate: false
+  xy: 2, 46
+  size: 101, 955
+  orig: 101, 955
+  offset: 0, 0
+  index: -1
+Bar_Research_Full
+  rotate: false
+  xy: 105, 46
+  size: 101, 955
+  orig: 101, 955
+  offset: 0, 0
+  index: -1
+Bar_Research_Highlight
+  rotate: false
+  xy: 311, 46
+  size: 100, 955
+  orig: 100, 955
+  offset: 0, 0
+  index: -1
+Bar_Research_Mask
+  rotate: false
+  xy: 208, 46
+  size: 101, 955
+  orig: 101, 955
+  offset: 0, 0
+  index: -1
+Bar_TimeLeft_Empty
+  rotate: false
+  xy: 413, 930
+  size: 438, 71
+  orig: 438, 71
+  offset: 0, 0
+  index: -1
+Button_BuyUpgrade_Clicked
+  rotate: false
+  xy: 851, 812
+  size: 141, 116
+  orig: 141, 116
+  offset: 0, 0
+  index: -1
+Button_BuyUpgrade_Neutral
+  rotate: false
+  xy: 851, 694
+  size: 141, 116
+  orig: 141, 116
+  offset: 0, 0
+  index: -1
+Button_HomeTab_Active
+  rotate: false
+  xy: 413, 2
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_HomeTab_Inactive
+  rotate: false
+  xy: 682, 2
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_SellProperty_Clicked
+  rotate: false
+  xy: 811, 237
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+Button_SellProperty_Neutral
+  rotate: false
+  xy: 851, 552
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+
+images-packed3.png
+size: 943,1015
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+BG_RequiredResource
+  rotate: false
+  xy: 2, 232
+  size: 396, 309
+  orig: 396, 309
+  offset: 0, 0
+  index: -1
+BG_SelectedUpgrade
+  rotate: false
+  xy: 400, 288
+  size: 247, 253
+  orig: 247, 253
+  offset: 0, 0
+  index: -1
+Button_BuyResource_Clicked
+  rotate: false
+  xy: 2, 661
+  size: 823, 116
+  orig: 823, 116
+  offset: 0, 0
+  index: -1
+Button_BuyResource_Neutral
+  rotate: false
+  xy: 2, 898
+  size: 823, 117
+  orig: 823, 117
+  offset: 0, 0
+  index: -1
+Button_MarketTab_Active
+  rotate: false
+  xy: 2, 2
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_MarketTab_Inactive
+  rotate: false
+  xy: 649, 313
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_PropertiesTab_Active
+  rotate: false
+  xy: 271, 2
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_PropertiesTab_Inactive
+  rotate: false
+  xy: 649, 83
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_SellResource_Clicked
+  rotate: false
+  xy: 2, 543
+  size: 824, 116
+  orig: 824, 116
+  offset: 0, 0
+  index: -1
+Button_SellResource_Neutral
+  rotate: false
+  xy: 2, 779
+  size: 823, 117
+  orig: 823, 117
+  offset: 0, 0
+  index: -1
+Button_VolumeMute_Clicked
+  rotate: false
+  xy: 827, 886
+  size: 116, 129
+  orig: 116, 129
+  offset: 0, 0
+  index: -1
+Button_VolumeMute_Neutral
+  rotate: false
+  xy: 828, 624
+  size: 115, 129
+  orig: 115, 129
+  offset: 0, 0
+  index: -1
+Button_VolumeUnmute_Clicked
+  rotate: false
+  xy: 827, 755
+  size: 116, 129
+  orig: 116, 129
+  offset: 0, 0
+  index: -1
+
+images-packed4.png
+size: 778,254
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Button_MarketSlider_BuySide
+  rotate: false
+  xy: 540, 2
+  size: 121, 121
+  orig: 121, 121
+  offset: 0, 0
+  index: -1
+Button_MarketSlider_SellSide
+  rotate: false
+  xy: 657, 133
+  size: 121, 121
+  orig: 121, 121
+  offset: 0, 0
+  index: -1
+Button_UpgradesTab_Active
+  rotate: false
+  xy: 2, 26
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_UpgradesTab_Inactive
+  rotate: false
+  xy: 271, 26
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_VolumeUnmute_Neutral
+  rotate: false
+  xy: 540, 125
+  size: 115, 129
+  orig: 115, 129
+  offset: 0, 0
+  index: -1

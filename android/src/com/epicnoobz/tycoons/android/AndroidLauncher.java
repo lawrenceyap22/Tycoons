@@ -13,6 +13,8 @@ public class AndroidLauncher extends AndroidApplication {
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useAccelerometer = false;
 		config.useCompass = false;
+		config.useImmersiveMode = true;
+		
 		initialize(new Tycoons(), config);
 	}
 }

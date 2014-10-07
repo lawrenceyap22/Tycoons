@@ -23,7 +23,7 @@ public abstract class GameScreen implements Screen {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
 
-		stage = new Stage(new StretchViewport(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, camera), game.getBatch());
+		stage = new Stage(new StretchViewport(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, camera), game.batch);
 		Gdx.input.setInputProcessor(stage);
 
 		stage.setDebugAll(Tycoons.DEV_MODE);
@@ -32,12 +32,13 @@ public abstract class GameScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
+		Gdx.app.log(Tycoons.TAG, "Resize screen " + getName());
 		stage.getViewport().update(width, height, true);
 	}
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(1, 1, 1, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
 
 		camera.update();
@@ -48,24 +49,31 @@ public abstract class GameScreen implements Screen {
 
 	@Override
 	public void show() {
+		Gdx.app.log(Tycoons.TAG, "Show screen " + getName());
 	}
 
 	@Override
 	public void hide() {
+		Gdx.app.log(Tycoons.TAG, "Hide screen " + getName());
 	}
 
 	@Override
 	public void pause() {
+		Gdx.app.log(Tycoons.TAG, "Pause screen " + getName());
 	}
 
 	@Override
 	public void resume() {
+		Gdx.app.log(Tycoons.TAG, "Resume screen " + getName());
 	}
 
 	@Override
 	public void dispose() {
-		Gdx.app.log(Tycoons.TAG, "Disposing Game screens");
-		if (stage != null)
-			stage.dispose();
+		Gdx.app.log(Tycoons.TAG, "Dispose screen " + getName());
+		stage.dispose();
+	}
+
+	private String getName() {
+		return getClass().getSimpleName();
 	}
 }
