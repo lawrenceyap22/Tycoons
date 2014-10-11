@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.epicnoobz.tycoons.screens.HomeScreen;
 
 public class Tycoons extends Game {
-	public static final boolean DEV_MODE = true;
+	public static final boolean DEV_MODE = false;
 	public static final String TAG = Tycoons.class.getSimpleName();
 
 	public SpriteBatch batch;

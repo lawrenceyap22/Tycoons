@@ -27,8 +27,12 @@ public abstract class GameScreen implements Screen {
 		Gdx.input.setInputProcessor(stage);
 
 		stage.setDebugAll(Tycoons.DEV_MODE);
-
+		
+		loadAssets();
+		game.manager.finishLoading();
 	}
+	
+	protected abstract void loadAssets();
 
 	@Override
 	public void resize(int width, int height) {

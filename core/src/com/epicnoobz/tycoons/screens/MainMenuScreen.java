@@ -10,6 +10,11 @@ public class MainMenuScreen extends GameScreen {
 	public MainMenuScreen(Tycoons game) {
 		super(game);
 	}
+	
+	@Override
+	protected void loadAssets() {
+		
+	}
 
 	public static synchronized MainMenuScreen getScreen(Tycoons game) {
 		if (instance == null) {

@@ -37,6 +37,7 @@ public class GameProgressBar extends Actor {
 		this.isVertical = isVertical;
 		this.progressSize = isVertical ? progress.getRegionHeight() : progress.getRegionWidth();
 		this.highlight = null;
+		setBounds(0, 0, background.getRegionWidth(), background.getRegionHeight());
 		setValue(min);
 	}
 
@@ -46,7 +47,6 @@ public class GameProgressBar extends Actor {
 
 	public void addHighlight(TextureRegion highlight) {
 		this.highlight = highlight;
-		setHighlightRegionToValue();
 	}
 
 	public void addStep() {
@@ -60,7 +60,8 @@ public class GameProgressBar extends Actor {
 		if (isVertical) {
 			progress.setV(progress.getV2() - (value - min) / (max - min) * progressSize
 					/ progress.getTexture().getHeight());
-			setHighlightRegionToValue();
+		} else {
+			progress.setU2((value - min) / (max - min) * progressSize / progress.getTexture().getWidth());
 		}
 	}
 
@@ -74,15 +75,11 @@ public class GameProgressBar extends Actor {
 		return false;
 	}
 
-	private void setHighlightRegionToValue() {
-		if (highlight != null)
-			highlight.setV(progress.getV());
-	}
-
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		batch.draw(background, getX(), getY());
 		batch.draw(progress, getX(), getY());
-		batch.draw(highlight, getX(), getY());
+		if (highlight != null)
+			batch.draw(highlight, getX(), getY());
 	}
 }
