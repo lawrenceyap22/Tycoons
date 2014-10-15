@@ -1,5 +1,6 @@
 package com.epicnoobz.tycoons.screens;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.epicnoobz.tycoons.Tycoons;
 
 public class MarketScreen extends GameScreen {
@@ -19,6 +20,12 @@ public class MarketScreen extends GameScreen {
 			instance = new MarketScreen(game);
 		}
 		return instance;
+	}
+
+	@Override
+	protected void addScreenTabs(TextureAtlas atlas) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

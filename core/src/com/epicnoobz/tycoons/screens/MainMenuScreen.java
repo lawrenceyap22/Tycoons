@@ -1,5 +1,6 @@
 package com.epicnoobz.tycoons.screens;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.epicnoobz.tycoons.Tycoons;
 
 public class MainMenuScreen extends GameScreen {
@@ -36,5 +37,11 @@ public class MainMenuScreen extends GameScreen {
 	@Override
 	public void dispose() {
 		super.dispose();
+	}
+
+	@Override
+	protected void addScreenTabs(TextureAtlas atlas) {
+		// TODO Auto-generated method stub
+		
 	}
 }

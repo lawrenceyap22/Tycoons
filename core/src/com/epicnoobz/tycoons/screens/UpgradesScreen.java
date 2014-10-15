@@ -1,5 +1,6 @@
 package com.epicnoobz.tycoons.screens;
 
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.epicnoobz.tycoons.Tycoons;
 
 public class UpgradesScreen extends GameScreen {
@@ -21,6 +22,12 @@ public class UpgradesScreen extends GameScreen {
 			instance = new UpgradesScreen(game);
 		}
 		return instance;
+	}
+
+	@Override
+	protected void addScreenTabs(TextureAtlas atlas) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

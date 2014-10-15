@@ -45,8 +45,8 @@ public class Tycoons extends Game {
 	@Override
 	public void dispose() {
 		Gdx.app.log(Tycoons.TAG, "Disposing game");
-		home.dispose();
 		batch.dispose();
+		home.dispose();
 		manager.dispose();
 	}
 

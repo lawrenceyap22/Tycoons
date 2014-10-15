@@ -4,11 +4,17 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.epicnoobz.tycoons.Tycoons;
+import com.epicnoobz.tycoons.objects.ScreenTabs;
 
 public abstract class GameScreen implements Screen {
+	
+	public enum Tab{
+		HOME, PROPERTIES, UPGRADES, MARKET
+	}
 
 	public static final int VIEWPORT_WIDTH = 1080;
 	public static final int VIEWPORT_HEIGHT = 1920;
@@ -16,6 +22,7 @@ public abstract class GameScreen implements Screen {
 	protected final Tycoons game;
 	protected OrthographicCamera camera;
 	protected Stage stage;
+	protected ScreenTabs screenTabs;
 
 	public GameScreen(final Tycoons game) {
 		this.game = game;
@@ -33,6 +40,7 @@ public abstract class GameScreen implements Screen {
 	}
 	
 	protected abstract void loadAssets();
+	protected abstract void addScreenTabs(TextureAtlas atlas);
 
 	@Override
 	public void resize(int width, int height) {
