@@ -29,6 +29,8 @@ public class ResourcesDrawer extends Group {
 	boolean isOpen;
 	boolean isPositionFixed = false;
 	BitmapFont font;
+	Rectangle scissors;
+	Rectangle clipBounds;
 
 	public ResourcesDrawer(Texture background, Texture resourceList, TextureRegion buttonUp, TextureRegion buttonDown,
 			BitmapFont font, int nRowResources) {
@@ -83,11 +85,11 @@ public class ResourcesDrawer extends Group {
 	private float getResourceListOffset() {
 		return button.getHeight() * 2 / 3;
 	}
-	
+
 	@Override
-	public void setPosition(float x, float y){
+	public void setPosition(float x, float y) {
 		super.setPosition(x, y);
-		if(!isPositionFixed){
+		if (!isPositionFixed) {
 			resourceListPositionY = y;
 			isPositionFixed = true;
 		}
@@ -102,28 +104,28 @@ public class ResourcesDrawer extends Group {
 	public void draw(Batch batch, float parentAlpha) {
 		batch.draw(background, getX(), getY());
 		super.draw(batch, parentAlpha);
-		Rectangle scissors = new Rectangle();
-		Rectangle clipBounds = new Rectangle(getX(), getY() + getResourceListOffset(), resourceList.getRegionWidth(),
+		scissors = new Rectangle();
+		clipBounds = new Rectangle(getX(), getY() + getResourceListOffset(), resourceList.getRegionWidth(),
 				resourceList.getRegionHeight());
 		ScissorStack.calculateScissors(getStage().getCamera(), batch.getTransformMatrix(), clipBounds, scissors);
 		ScissorStack.pushScissors(scissors);
-		batch.draw(resourceList, getCenterX() - resourceList.getRegionWidth() / 2, resourceListPositionY + getResourceListOffset());
+		batch.draw(resourceList, getCenterX() - resourceList.getRegionWidth() / 2, resourceListPositionY
+				+ getResourceListOffset());
 		printResources(batch);
 		batch.flush();
 		ScissorStack.popScissors();
 	}
-	
-	public void setResources(int n, Resource resource){
+
+	public void setResources(int n, Resource resource) {
 		ownedResources[resource.getIndex()] = n;
 	}
-	
-	private void printResources(Batch batch){
-		int i = 0;
-		for(int x = 180; x < 694 && i < ownedResources.length; x+=513){
-			for(float y = 1870;y > 536.2; y-=148.2){
-				font.draw(batch, ownedResources[i] + "", x, y);
-				i++;
-			}
+
+	private void printResources(Batch batch) {
+		float x = 180;
+		float y = resourceListPositionY + resourceList.getRegionHeight();
+		for (int i = 0; i < ownedResources.length; i++) {
+			font.draw(batch, ownedResources[i] + "", x + (i / nRowResources) * resourceList.getRegionWidth() / 2, y
+					- (i % nRowResources) * resourceListHeightPerResource);
 		}
 	}
 
