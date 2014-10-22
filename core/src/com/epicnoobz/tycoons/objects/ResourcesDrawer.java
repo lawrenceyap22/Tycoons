@@ -1,6 +1,7 @@
 package com.epicnoobz.tycoons.objects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -27,7 +28,8 @@ public class ResourcesDrawer extends Group {
 	float resourceListHeightPerResource;
 	float resourceListPositionY;
 	boolean isOpen;
-	boolean isPositionFixed = false;
+	boolean isPositionFixed;
+	boolean isClicked;
 	BitmapFont font;
 	Rectangle scissors;
 	Rectangle clipBounds;
@@ -49,10 +51,11 @@ public class ResourcesDrawer extends Group {
 		ownedResources = new long[Resource.values().length];
 		resourceListHeightPerResource = resourceList.getRegionHeight() * 1.0f / nRowResources;
 		nRowResourcesToShow = 3;
-
 		setBounds(0, 0, background.getRegionWidth(), background.getRegionHeight());
 		addButton();
 		isOpen = true;
+		isPositionFixed = false;
+		isClicked = false;
 	}
 
 	private void addButton() {
@@ -62,6 +65,7 @@ public class ResourcesDrawer extends Group {
 
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
+				isClicked = true;
 				ResourcesDrawer.this.clearActions();
 				isOpen = !isOpen;
 				ResourcesDrawer.this.addAction(Actions.moveTo(ResourcesDrawer.this.getX(), ResourcesDrawer.this.getY()
@@ -73,19 +77,7 @@ public class ResourcesDrawer extends Group {
 		});
 		addActor(button);
 	}
-
-	public void setNResourcesToShow(int nResourcesToShow) {
-		this.nRowResourcesToShow = nResourcesToShow;
-	}
-
-	public float getVisibleHeight() {
-		return resourceList.getRegionHeight() + getResourceListOffset();
-	}
-
-	private float getResourceListOffset() {
-		return button.getHeight() * 2 / 3;
-	}
-
+	
 	@Override
 	public void setPosition(float x, float y) {
 		super.setPosition(x, y);
@@ -116,13 +108,39 @@ public class ResourcesDrawer extends Group {
 		ScissorStack.popScissors();
 	}
 
+	public void setNResourcesToShow(int nResourcesToShow) {
+		this.nRowResourcesToShow = nResourcesToShow;
+	}
+
+	public float getVisibleHeight() {
+		return resourceList.getRegionHeight() + getResourceListOffset();
+	}
+	
 	public void setResources(int n, Resource resource) {
 		ownedResources[resource.getIndex()] = n;
+	}
+	
+	public boolean isOpen(){
+		return isOpen;
+	}
+	
+	public boolean isClicked(){
+		return isClicked;
+	}
+	
+	public void wasClicked(){
+		isClicked = false;
+	}
+
+	private float getResourceListOffset() {
+		return button.getHeight() * 2 / 3;
 	}
 
 	private void printResources(Batch batch) {
 		float x = 180;
 		float y = resourceListPositionY + resourceList.getRegionHeight();
+		font.setColor(Color.WHITE);
+		font.setScale(1f);
 		for (int i = 0; i < ownedResources.length; i++) {
 			font.draw(batch, ownedResources[i] + "", x + (i / nRowResources) * resourceList.getRegionWidth() / 2, y
 					- (i % nRowResources) * resourceListHeightPerResource);

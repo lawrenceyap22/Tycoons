@@ -14,7 +14,7 @@ public class ScreenTabs extends Group {
 	Image upgradesTab;
 	Image marketTab;
 	Tab clickedTab;
-	boolean hasClicked;
+	boolean isClicked;
 
 	public ScreenTabs(Texture homeTab, Texture propertiesTab, Texture upgradesTab, Texture marketTab) {
 		this(new TextureRegion(homeTab), new TextureRegion(propertiesTab), new TextureRegion(upgradesTab),
@@ -27,7 +27,7 @@ public class ScreenTabs extends Group {
 		this.propertiesTab = new Image(propertiesTab);
 		this.upgradesTab = new Image(upgradesTab);
 		this.marketTab = new Image(marketTab);
-		hasClicked = false;
+		isClicked = false;
 
 		initScreenTabs();
 		addClickListeners();
@@ -58,7 +58,7 @@ public class ScreenTabs extends Group {
 		homeTab.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hasClicked = true;
+				isClicked = true;
 				clickedTab = Tab.HOME;
 			}
 		});
@@ -66,7 +66,7 @@ public class ScreenTabs extends Group {
 		propertiesTab.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hasClicked = true;
+				isClicked = true;
 				clickedTab = Tab.PROPERTIES;
 			}
 		});
@@ -74,7 +74,7 @@ public class ScreenTabs extends Group {
 		upgradesTab.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hasClicked = true;
+				isClicked = true;
 				clickedTab = Tab.UPGRADES;
 			}
 		});
@@ -82,23 +82,23 @@ public class ScreenTabs extends Group {
 		marketTab.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				hasClicked = true;
+				isClicked = true;
 				clickedTab = Tab.MARKET;
 			}
 		});
 
 	}
 
-	public void clearClickedTab() {
+	public void wasClicked() {
 		clickedTab = null;
-		hasClicked = false;
+		isClicked = false;
 	}
 
 	public Tab getClickedTab() {
 		return clickedTab;
 	}
 	
-	public boolean hasClicked(){
-		return hasClicked;
+	public boolean isClicked(){
+		return isClicked;
 	}
 }

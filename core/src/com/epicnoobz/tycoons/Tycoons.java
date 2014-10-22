@@ -11,14 +11,15 @@ public class Tycoons extends Game {
 	public static final String TAG = Tycoons.class.getSimpleName();
 
 	public SpriteBatch batch;
-	public AssetManager manager;
+	public AssetManager assetManager;
+	public SoundManager soundManager;
 	public HomeScreen home;
 
 	@Override
 	public void create() {
 		batch = new SpriteBatch();
-		manager = new AssetManager();
-
+		assetManager = new AssetManager();
+		soundManager = new SoundManager();
 		setScreen(home = new HomeScreen(this));
 	}
 
@@ -45,9 +46,10 @@ public class Tycoons extends Game {
 	@Override
 	public void dispose() {
 		Gdx.app.log(Tycoons.TAG, "Disposing game");
-		batch.dispose();
+		soundManager.dispose();
+		assetManager.dispose();
 		home.dispose();
-		manager.dispose();
+		batch.dispose();
 	}
 
 }
