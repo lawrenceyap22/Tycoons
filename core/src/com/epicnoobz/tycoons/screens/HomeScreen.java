@@ -28,17 +28,25 @@ public class HomeScreen extends GameScreen {
 
 	public HomeScreen(Tycoons game) {
 		super(game);
-		init();
 	}
 
 	@Override
 	protected void loadAssets() {
 		super.loadAssets();
-		game.assetManager.load("images/BG_HomeTab_Town.png", Texture.class);
-		game.assetManager.load("images/Button_Coin_Clicked.png", Texture.class);
-		game.assetManager.load("images/Button_Coin_Neutral.png", Texture.class);
-		game.assetManager.load("images/Drawer_HomeTab_BG.png", Texture.class);
-		game.assetManager.load("images/Drawer_HomeTab_ResourceList.png", Texture.class);
+	}
+
+	@Override
+	protected void initActors() {
+		TextureAtlas atlas = game.assetManager.get("images/images-packed.atlas", TextureAtlas.class);
+		addBG();
+		addScreenTabs(atlas, Tab.HOME);
+		addTabBG();
+		addHomeBG();
+		addCoin();
+		addResearchBar(atlas);
+		addImageLabels(atlas);
+		addResourceDrawer(atlas);
+		addSoundButton(atlas);
 	}
 
 	private void addBG() {
@@ -62,24 +70,11 @@ public class HomeScreen extends GameScreen {
 		stage.addActor(homeBG);
 	}
 
-	private void init() {
-		TextureAtlas atlas = game.assetManager.get("images/images-packed.atlas", TextureAtlas.class);
-		addBG();
-		addScreenTabs(atlas, Tab.HOME);
-		addTabBG();
-		addHomeBG();
-		addCoin();
-		addResearchBar(atlas);
-		addImageLabels(atlas);
-		addResourceDrawer(atlas);
-		initVolumeButton(atlas); //Required: stage.addActor(volume) in show method
-	}
-
 	private void addCoin() {
 		final TextureRegionDrawable unPressedCoinDrawable = new TextureRegionDrawable(new TextureRegion(
 				game.assetManager.get("images/Button_Coin_Neutral.png", Texture.class)));
-		final TextureRegionDrawable pressedCoinDrawable = new TextureRegionDrawable(new TextureRegion(game.assetManager.get(
-				"images/Button_Coin_Clicked.png", Texture.class)));
+		final TextureRegionDrawable pressedCoinDrawable = new TextureRegionDrawable(new TextureRegion(
+				game.assetManager.get("images/Button_Coin_Clicked.png", Texture.class)));
 		coin = new Image(unPressedCoinDrawable);
 		coin.setPosition(-100, VIEWPORT_HEIGHT / 2 - coin.getHeight() * 2 / 3 + 100);
 		final Rectangle clickBounds = new Rectangle(171, 171, 715, 715);
@@ -146,16 +141,10 @@ public class HomeScreen extends GameScreen {
 		tech.setPosition(50, coin.getY());
 		stage.addActor(tech);
 
-		properties = new ImageLabel(atlas.findRegion("Icon_Properties"), "6/14", game.assetManager.get("font/tycoons.fnt",
-				BitmapFont.class), true, dark_gray, 1.58f);
+		properties = new ImageLabel(atlas.findRegion("Icon_Properties"), "6/14", game.assetManager.get(
+				"font/tycoons.fnt", BitmapFont.class), true, dark_gray, 1.58f);
 		properties.setPosition(50, tech.getY() - properties.getHeight());
 		stage.addActor(properties);
-	}
-	
-	@Override
-	public void show(){
-		super.show();
-		stage.addActor(volume);
 	}
 
 	@Override
@@ -168,10 +157,6 @@ public class HomeScreen extends GameScreen {
 			} else {
 
 			}
-		}
-
-		if (screenTabs.isClicked()) {
-			screenTabs.wasClicked();
 		}
 	}
 

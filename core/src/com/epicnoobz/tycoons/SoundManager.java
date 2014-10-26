@@ -31,27 +31,23 @@ public class SoundManager implements Disposable {
 				Sound soundToPlay = Gdx.audio.newSound(Gdx.files.internal(sound.filename));
 				soundCache.put(sound, soundToPlay);
 				soundToPlay.play();
-			}else{
+			} else {
 				soundCache.get(sound).play();
 			}
 		}
 	}
-	
-	public void mute(){
-		mute = true;
+
+	public void setMute(boolean mute) {
+		this.mute = mute;
 	}
-	
-	public void unmute(){
-		mute = false;
-	}
-	
-	public boolean isMute(){
+
+	public boolean isMute() {
 		return mute;
 	}
 
 	@Override
 	public void dispose() {
-		for(Sound sound : soundCache.values()){
+		for (Sound sound : soundCache.values()) {
 			sound.stop();
 			sound.dispose();
 		}
