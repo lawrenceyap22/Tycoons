@@ -137,27 +137,15 @@ public class HomeScreen extends GameScreen {
 		stage.addActor(cash);
 
 		tech = new ImageLabel(atlas.findRegion("Icon_Research"), "12", game.assetManager.get("font/tycoons.fnt",
-				BitmapFont.class), true, dark_gray, 1.58f);
-		tech.setPosition(50, coin.getY());
+				BitmapFont.class), true, dark_gray, 2.1f);
+		tech.setPosition(50, coin.getY() - 50);
+		tech.scaleTo(0.75f);
 		stage.addActor(tech);
 
 		properties = new ImageLabel(atlas.findRegion("Icon_Properties"), "6/14", game.assetManager.get(
-				"font/tycoons.fnt", BitmapFont.class), true, dark_gray, 1.58f);
-		properties.setPosition(50, tech.getY() - properties.getHeight());
+				"font/tycoons.fnt", BitmapFont.class), true, dark_gray, 2.1f);
+		properties.setPosition(50, coin.getY() - properties.getHeight() - 30);
+		properties.scaleTo(0.75f);
 		stage.addActor(properties);
 	}
-
-	@Override
-	public void render(float delta) {
-		super.render(delta);
-		if (resourcesDrawer.isClicked()) {
-			resourcesDrawer.wasClicked();
-			if (resourcesDrawer.isOpen()) {
-				// TODO change layout
-			} else {
-
-			}
-		}
-	}
-
 }

@@ -97,8 +97,6 @@ public abstract class GameScreen extends AbstractScreen {
 	public void render(float delta) {
 		super.render(delta);
 
-		sound.setChecked(game.soundManager.isMute());
-
 		if (screenTabs.isClicked()) {
 			switch (screenTabs.getClickedTab()) {
 			case HOME:

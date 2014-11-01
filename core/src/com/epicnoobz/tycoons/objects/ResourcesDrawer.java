@@ -29,7 +29,6 @@ public class ResourcesDrawer extends Group {
 	float resourceListPositionY;
 	boolean isOpen;
 	boolean isPositionFixed;
-	boolean isClicked;
 	BitmapFont font;
 	Rectangle scissors;
 	Rectangle clipBounds;
@@ -55,7 +54,6 @@ public class ResourcesDrawer extends Group {
 		addButton();
 		isOpen = true;
 		isPositionFixed = false;
-		isClicked = false;
 	}
 
 	private void addButton() {
@@ -65,7 +63,6 @@ public class ResourcesDrawer extends Group {
 
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				isClicked = true;
 				ResourcesDrawer.this.clearActions();
 				isOpen = !isOpen;
 				ResourcesDrawer.this.addAction(Actions.moveTo(ResourcesDrawer.this.getX(), ResourcesDrawer.this.getY()
@@ -122,14 +119,6 @@ public class ResourcesDrawer extends Group {
 	
 	public boolean isOpen(){
 		return isOpen;
-	}
-	
-	public boolean isClicked(){
-		return isClicked;
-	}
-	
-	public void wasClicked(){
-		isClicked = false;
 	}
 
 	private float getResourceListOffset() {
