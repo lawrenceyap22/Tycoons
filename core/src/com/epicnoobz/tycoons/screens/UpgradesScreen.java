@@ -2,10 +2,10 @@ package com.epicnoobz.tycoons.screens;
 
 import com.epicnoobz.tycoons.Tycoons;
 
-public class PropertiesScreen extends GameScreen {
+public class UpgradesScreen extends GameScreen{
 
-	public PropertiesScreen(Tycoons game) {
-		super(game, Tab.PROPERTIES);
+	public UpgradesScreen(Tycoons game) {
+		super(game, Tab.UPGRADES);
 	}
 
 	@Override

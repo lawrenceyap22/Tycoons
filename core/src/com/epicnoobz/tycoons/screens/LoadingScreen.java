@@ -57,6 +57,8 @@ public class LoadingScreen extends AbstractScreen {
 		if (game.assetManager.update()) {
 			game.home = new HomeScreen(game);
 			game.properties = new PropertiesScreen(game);
+			game.upgrades = new UpgradesScreen(game);
+			game.market = new MarketScreen(game);
 			game.setScreen(game.home);
 		}
 

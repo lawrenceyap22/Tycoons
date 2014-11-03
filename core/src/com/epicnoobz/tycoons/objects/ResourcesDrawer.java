@@ -1,10 +1,12 @@
 package com.epicnoobz.tycoons.objects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -33,20 +35,14 @@ public class ResourcesDrawer extends Group {
 	Rectangle scissors;
 	Rectangle clipBounds;
 
-	public ResourcesDrawer(Texture background, Texture resourceList, TextureRegion buttonUp, TextureRegion buttonDown,
-			BitmapFont font, int nRowResources) {
-		this(new TextureRegion(background), new TextureRegion(resourceList), new TextureRegionDrawable(buttonUp),
-				new TextureRegionDrawable(buttonDown), font, nRowResources);
-	}
-
-	public ResourcesDrawer(TextureRegion background, TextureRegion resourceList, Drawable buttonUp,
-			Drawable buttonDown, BitmapFont font, int nRowResources) {
-		this.background = background;
-		this.resourceList = resourceList;
-		this.buttonUp = buttonUp;
-		this.buttonDown = buttonDown;
+	public ResourcesDrawer(AssetManager assetManager, int nRowResources) {
+		TextureAtlas atlas = assetManager.get("images/images-packed.atlas", TextureAtlas.class);
+		background = new TextureRegion(assetManager.get("images/Drawer_HomeTab_BG.png", Texture.class));
+		resourceList = new TextureRegion(assetManager.get("images/Drawer_HomeTab_ResourceList.png", Texture.class));
+		buttonUp = new TextureRegionDrawable(atlas.findRegion("Button_HomeTabDrawer_Pullup"));
+		buttonDown = new TextureRegionDrawable(atlas.findRegion("Button_HomeTabDrawer_Pulldown"));
+		font = assetManager.get("font/tycoons.fnt", BitmapFont.class);
 		this.nRowResources = nRowResources;
-		this.font = font;
 		ownedResources = new long[Resource.values().length];
 		resourceListHeightPerResource = resourceList.getRegionHeight() * 1.0f / nRowResources;
 		nRowResourcesToShow = 3;
@@ -74,7 +70,7 @@ public class ResourcesDrawer extends Group {
 		});
 		addActor(button);
 	}
-	
+
 	@Override
 	public void setPosition(float x, float y) {
 		super.setPosition(x, y);
@@ -112,12 +108,12 @@ public class ResourcesDrawer extends Group {
 	public float getVisibleHeight() {
 		return resourceList.getRegionHeight() + getResourceListOffset();
 	}
-	
+
 	public void setResources(int n, Resource resource) {
 		ownedResources[resource.getIndex()] = n;
 	}
-	
-	public boolean isOpen(){
+
+	public boolean isOpen() {
 		return isOpen;
 	}
 

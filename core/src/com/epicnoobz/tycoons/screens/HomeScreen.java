@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -27,40 +26,17 @@ public class HomeScreen extends GameScreen {
 	ImageLabel properties;
 
 	public HomeScreen(Tycoons game) {
-		super(game);
-	}
-
-	@Override
-	protected void loadAssets() {
-		super.loadAssets();
+		super(game, Tab.HOME);
 	}
 
 	@Override
 	protected void initActors() {
-		TextureAtlas atlas = game.assetManager.get("images/images-packed.atlas", TextureAtlas.class);
-		addBG();
-		addScreenTabs(atlas, Tab.HOME);
-		addTabBG();
+		super.initActors();
 		addHomeBG();
 		addCoin();
-		addResearchBar(atlas);
-		addImageLabels(atlas);
-		addResourceDrawer(atlas);
-		addSoundButton(atlas);
-	}
-
-	private void addBG() {
-		Image mainBG = new Image(game.assetManager.get("images/BG_Overall.png", Texture.class));
-		mainBG.setPosition(VIEWPORT_WIDTH / 2 - mainBG.getWidth() / 2, VIEWPORT_HEIGHT - mainBG.getHeight());
-		mainBG.setTouchable(Touchable.disabled);
-		stage.addActor(mainBG);
-	}
-
-	private void addTabBG() {
-		Image tabBG = new Image(game.assetManager.get("images/BG_Tab.png", Texture.class));
-		tabBG.setPosition(VIEWPORT_WIDTH / 2 - tabBG.getWidth() / 2, VIEWPORT_HEIGHT - tabBG.getHeight());
-		tabBG.setTouchable(Touchable.disabled);
-		stage.addActor(tabBG);
+		addResearchBar();
+		addImageLabels();
+		addResourceDrawer();
 	}
 
 	private void addHomeBG() {
@@ -109,7 +85,7 @@ public class HomeScreen extends GameScreen {
 		stage.addActor(coin);
 	}
 
-	private void addResearchBar(TextureAtlas atlas) {
+	private void addResearchBar() {
 		researchBar = new GameProgressBar(0, 10, 1, atlas.findRegion("Bar_Research_BG"), new TextureRegion(
 				atlas.findRegion("Bar_Research_Full")), true);
 		researchBar.setPosition(coin.getRight() - 80, VIEWPORT_HEIGHT / 2 - researchBar.getHeight() / 2 - 50);
@@ -119,17 +95,14 @@ public class HomeScreen extends GameScreen {
 		stage.addActor(researchBar);
 	}
 
-	private void addResourceDrawer(TextureAtlas atlas) {
-		resourcesDrawer = new ResourcesDrawer(game.assetManager.get("images/Drawer_HomeTab_BG.png", Texture.class),
-				game.assetManager.get("images/Drawer_HomeTab_ResourceList.png", Texture.class),
-				atlas.findRegion("Button_HomeTabDrawer_Pullup"), atlas.findRegion("Button_HomeTabDrawer_Pulldown"),
-				game.assetManager.get("font/tycoons.fnt", BitmapFont.class), 10);
+	private void addResourceDrawer() {
+		resourcesDrawer = new ResourcesDrawer(game.assetManager, 10);
 		resourcesDrawer.setPosition(VIEWPORT_WIDTH / 2 - resourcesDrawer.getWidth() / 2, VIEWPORT_HEIGHT
 				- resourcesDrawer.getVisibleHeight());
 		stage.addActor(resourcesDrawer);
 	}
 
-	private void addImageLabels(TextureAtlas atlas) {
+	private void addImageLabels() {
 		Color dark_gray = Color.valueOf("696965");
 		cash = new ImageLabel(atlas.findRegion("Icon_Money"), "1234567890", game.assetManager.get("font/tycoons.fnt",
 				BitmapFont.class), true, dark_gray, 1.58f);

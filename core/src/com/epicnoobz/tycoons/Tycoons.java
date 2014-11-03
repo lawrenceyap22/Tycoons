@@ -6,7 +6,9 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.epicnoobz.tycoons.screens.HomeScreen;
 import com.epicnoobz.tycoons.screens.MainMenuScreen;
+import com.epicnoobz.tycoons.screens.MarketScreen;
 import com.epicnoobz.tycoons.screens.PropertiesScreen;
+import com.epicnoobz.tycoons.screens.UpgradesScreen;
 
 public class Tycoons extends Game {
 	public static final boolean DEV_MODE = false;
@@ -18,6 +20,8 @@ public class Tycoons extends Game {
 	public MainMenuScreen mainMenu;
 	public HomeScreen home;
 	public PropertiesScreen properties;
+	public UpgradesScreen upgrades;
+	public MarketScreen market;
 
 	@Override
 	public void create() {
@@ -55,6 +59,8 @@ public class Tycoons extends Game {
 		mainMenu.dispose();
 		home.dispose();
 		properties.dispose();
+		upgrades.dispose();
+		market.dispose();
 		batch.dispose();
 	}
 
