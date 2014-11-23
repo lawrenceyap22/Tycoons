@@ -119,3 +119,7 @@ idea {
         }
     }
 }
+
+dependencies{
+	compile "com.esotericsoftware:kryo:3.0.0"
+}

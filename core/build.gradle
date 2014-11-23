@@ -9,3 +9,7 @@ sourceSets.main.java.srcDirs = [ "src/" ]
 eclipse.project {
     name = appName + "-core"
 }
+
+dependencies{
+	compile "com.esotericsoftware:kryo:3.0.0"
+}

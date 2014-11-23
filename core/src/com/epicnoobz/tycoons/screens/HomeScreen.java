@@ -76,7 +76,9 @@ public class HomeScreen extends GameScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				if (clickBounds.contains(x, y)) {
 					Gdx.app.log(Tycoons.TAG, "Clicked!");
-					// TODO do something upon clicked!
+					game.state.calculateMoney(100);
+					game.state.subClicksForTech();
+					game.state.checkToAddTech();
 				}
 			}
 
@@ -104,21 +106,30 @@ public class HomeScreen extends GameScreen {
 
 	private void addImageLabels() {
 		Color dark_gray = Color.valueOf("696965");
-		cash = new ImageLabel(atlas.findRegion("Icon_Money"), "1234567890", game.assetManager.get("font/tycoons.fnt",
-				BitmapFont.class), true, dark_gray, 1.58f);
+		cash = new ImageLabel(atlas.findRegion("Icon_Money"), game.state.getMoney() + "", game.assetManager.get(
+				"font/tycoons.fnt", BitmapFont.class), true, dark_gray, 1.58f);
 		cash.setPosition(50, coin.getTop() - 100);
 		stage.addActor(cash);
 
-		tech = new ImageLabel(atlas.findRegion("Icon_Research"), "12", game.assetManager.get("font/tycoons.fnt",
-				BitmapFont.class), true, dark_gray, 2.1f);
+		tech = new ImageLabel(atlas.findRegion("Icon_Research"), game.state.getTechs() + "", game.assetManager.get(
+				"font/tycoons.fnt", BitmapFont.class), true, dark_gray, 2.1f);
 		tech.setPosition(50, coin.getY() - 50);
 		tech.scaleTo(0.75f);
 		stage.addActor(tech);
 
-		properties = new ImageLabel(atlas.findRegion("Icon_Properties"), "6/14", game.assetManager.get(
-				"font/tycoons.fnt", BitmapFont.class), true, dark_gray, 2.1f);
+		properties = new ImageLabel(atlas.findRegion("Icon_Properties"), game.state.getPropertiesSize() + "/14",
+				game.assetManager.get("font/tycoons.fnt", BitmapFont.class), true, dark_gray, 2.1f);
 		properties.setPosition(50, coin.getY() - properties.getHeight() - 30);
 		properties.scaleTo(0.75f);
 		stage.addActor(properties);
 	}
+
+	@Override
+	public void render(float delta) {
+		super.render(delta);
+		cash.setLabel(game.state.getMoney() + "");
+		tech.setLabel(game.state.getTechs() + "");
+		properties.setLabel(game.state.getPropertiesSize() + "/14");
+	}
+
 }

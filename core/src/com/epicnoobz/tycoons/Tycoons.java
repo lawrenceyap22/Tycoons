@@ -22,6 +22,7 @@ public class Tycoons extends Game {
 	public PropertiesScreen properties;
 	public UpgradesScreen upgrades;
 	public MarketScreen market;
+	public GameState state;
 
 	@Override
 	public void create() {
@@ -54,6 +55,9 @@ public class Tycoons extends Game {
 	@Override
 	public void dispose() {
 		Gdx.app.log(Tycoons.TAG, "Disposing game");
+		
+		state.save();
+		
 		soundManager.dispose();
 		assetManager.dispose();
 		mainMenu.dispose();
