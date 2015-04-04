@@ -63,7 +63,7 @@ public class ResourcesDrawer extends Group {
 				isOpen = !isOpen;
 				ResourcesDrawer.this.addAction(Actions.moveTo(ResourcesDrawer.this.getX(), ResourcesDrawer.this.getY()
 						+ (isOpen ? -1 : 1) * resourceListHeightPerResource * (nRowResources - nRowResourcesToShow),
-						0.5f));
+						0.25f));
 				button.setDrawable(isOpen ? buttonUp : buttonDown);
 				Gdx.app.log(Tycoons.TAG, "Drawer clicked!");
 			}

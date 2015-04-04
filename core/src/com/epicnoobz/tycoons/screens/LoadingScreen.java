@@ -21,14 +21,17 @@ public class LoadingScreen extends AbstractScreen {
 
 	@Override
 	protected void loadAssets() {
-		game.assetManager.load("images/images-packed.atlas", TextureAtlas.class);
 		game.assetManager.load("images/BG_Overall.png", Texture.class);
 		game.assetManager.load("images/BG_Tab.png", Texture.class);
 		game.assetManager.load("images/BG_HomeTab_Town.png", Texture.class);
+		game.assetManager.load("images/BG_UpgradeLabel.png", Texture.class);
+		game.assetManager.load("images/BG_UpgradeList_AdditionalTiles.png", Texture.class);
+		game.assetManager.load("images/BG_UpgradeList_Tiles.png", Texture.class);
 		game.assetManager.load("images/Button_Coin_Clicked.png", Texture.class);
 		game.assetManager.load("images/Button_Coin_Neutral.png", Texture.class);
 		game.assetManager.load("images/Drawer_HomeTab_BG.png", Texture.class);
 		game.assetManager.load("images/Drawer_HomeTab_ResourceList.png", Texture.class);
+		game.assetManager.load("images/ResourceList.png", Texture.class);
 	}
 
 	@Override
@@ -63,7 +66,7 @@ public class LoadingScreen extends AbstractScreen {
 		}
 
 		// TODO update progress bar
-		loadingBar.setValue(game.assetManager.getProgress() * 1000);
+		loadingBar.setValue((int)(game.assetManager.getProgress() * 1000));
 	}
 
 	@Override

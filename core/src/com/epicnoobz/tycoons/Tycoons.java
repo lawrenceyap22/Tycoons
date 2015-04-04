@@ -13,6 +13,12 @@ import com.epicnoobz.tycoons.screens.UpgradesScreen;
 public class Tycoons extends Game {
 	public static final boolean DEV_MODE = false;
 	public static final String TAG = Tycoons.class.getSimpleName();
+	
+	public static final int NUMBER_OF_CLICKS_FOR_TECH = 200;
+	public static final int MAX_MULTIPLIER = 5;
+	public static final int NUMBER_OF_CLICKS_FOR_COMBO = 10;
+	public static final float TIME_COMBO_EXPIRE = 2f;
+	public static final String SAVE_FILE = "data/tycoons.sav";
 
 	public SpriteBatch batch;
 	public AssetManager assetManager;

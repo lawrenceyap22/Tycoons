@@ -34,7 +34,7 @@ public class ImageLabel extends Actor {
 		this.isImageFirst = isImageFirst;
 		this.color = color;
 		this.fontSize = fontSize;
-		this.scale = 1;
+		this.scale = 1f;
 		gap = 20;
 		calculateBounds();
 	}
@@ -80,6 +80,7 @@ public class ImageLabel extends Actor {
 	public void draw(Batch batch, float parentAlpha) {
 		font.setColor(color);
 		font.setScale(scale * fontSize);
+		bounds = font.getBounds(label);
 		image.setScale(scale);
 		if (isImageFirst) {
 			image.setPosition(getX(), getY() + getHeight() / 2 - image.getHeight() / 2);

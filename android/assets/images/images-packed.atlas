@@ -97,126 +97,182 @@ Icon_Research
   index: -1
 
 images-packed2.png
-size: 992,1001
+size: 1019,999
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-BG_ProducedResource
-  rotate: false
-  xy: 413, 232
-  size: 396, 309
-  orig: 396, 309
-  offset: 0, 0
-  index: -1
 BG_SelectedProperty
   rotate: false
-  xy: 413, 543
+  xy: 413, 614
   size: 436, 385
   orig: 436, 385
   offset: 0, 0
   index: -1
 BG_SelectedResource
   rotate: false
-  xy: 811, 379
+  xy: 851, 837
   size: 147, 162
   orig: 147, 162
   offset: 0, 0
   index: -1
 Bar_Research_BG
   rotate: false
-  xy: 2, 46
+  xy: 2, 44
   size: 101, 955
   orig: 101, 955
   offset: 0, 0
   index: -1
 Bar_Research_Full
   rotate: false
-  xy: 105, 46
+  xy: 105, 44
   size: 101, 955
   orig: 101, 955
   offset: 0, 0
   index: -1
 Bar_Research_Highlight
   rotate: false
-  xy: 311, 46
+  xy: 311, 44
   size: 100, 955
   orig: 100, 955
   offset: 0, 0
   index: -1
 Bar_Research_Mask
   rotate: false
-  xy: 208, 46
+  xy: 208, 44
   size: 101, 955
   orig: 101, 955
   offset: 0, 0
   index: -1
 Bar_TimeLeft_Empty
   rotate: false
-  xy: 413, 930
+  xy: 413, 154
   size: 438, 71
   orig: 438, 71
   offset: 0, 0
   index: -1
-Button_BuyUpgrade_Clicked
+Building_Automotive_Assembly_Plant
   rotate: false
-  xy: 851, 812
-  size: 141, 116
-  orig: 141, 116
+  xy: 851, 532
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
-Button_BuyUpgrade_Neutral
+Building_Bakery
   rotate: false
-  xy: 851, 694
-  size: 141, 116
-  orig: 141, 116
+  xy: 851, 380
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
-Button_HomeTab_Active
+Building_Bar
+  rotate: false
+  xy: 851, 228
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Cattle_Farm
   rotate: false
   xy: 413, 2
-  size: 267, 228
-  orig: 267, 228
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
-Button_HomeTab_Inactive
+Building_Coal_Mine
   rotate: false
-  xy: 682, 2
-  size: 267, 228
-  orig: 267, 228
+  xy: 565, 2
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
-Button_SellProperty_Clicked
+Building_Coffee_Farm
   rotate: false
-  xy: 811, 237
-  size: 140, 140
-  orig: 140, 140
+  xy: 717, 2
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
-Button_SellProperty_Neutral
+Building_Cotton_Farm
   rotate: false
-  xy: 851, 552
-  size: 140, 140
-  orig: 140, 140
+  xy: 869, 76
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Uranium_Ore_Mine
+  rotate: false
+  xy: 851, 684
+  size: 151, 151
+  orig: 151, 151
+  offset: 0, 0
+  index: -1
+Building_temp
+  rotate: false
+  xy: 413, 227
+  size: 436, 385
+  orig: 436, 385
   offset: 0, 0
   index: -1
 
 images-packed3.png
-size: 943,1015
+size: 978,1015
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-BG_RequiredResource
+BG_ProducedResource
   rotate: false
   xy: 2, 232
   size: 396, 309
   orig: 396, 309
   offset: 0, 0
   index: -1
-BG_SelectedUpgrade
+BG_RequiredResource
   rotate: false
-  xy: 400, 288
-  size: 247, 253
-  orig: 247, 253
+  xy: 400, 232
+  size: 396, 309
+  orig: 396, 309
+  offset: 0, 0
+  index: -1
+Building_Delivery_Center
+  rotate: false
+  xy: 827, 865
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Fine_Dining_Restaurant
+  rotate: false
+  xy: 827, 713
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Fruit_Orchard
+  rotate: false
+  xy: 828, 561
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Green_House
+  rotate: false
+  xy: 798, 391
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Hydroelectric_Power_Plant
+  rotate: false
+  xy: 798, 239
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Metal_Ore_Mine
+  rotate: false
+  xy: 809, 87
+  size: 150, 150
+  orig: 150, 150
   offset: 0, 0
   index: -1
 Button_BuyResource_Clicked
@@ -233,30 +289,23 @@ Button_BuyResource_Neutral
   orig: 823, 117
   offset: 0, 0
   index: -1
-Button_MarketTab_Active
+Button_HomeTab_Active
   rotate: false
   xy: 2, 2
   size: 267, 228
   orig: 267, 228
   offset: 0, 0
   index: -1
-Button_MarketTab_Inactive
-  rotate: false
-  xy: 649, 313
-  size: 267, 228
-  orig: 267, 228
-  offset: 0, 0
-  index: -1
-Button_PropertiesTab_Active
+Button_HomeTab_Inactive
   rotate: false
   xy: 271, 2
   size: 267, 228
   orig: 267, 228
   offset: 0, 0
   index: -1
-Button_PropertiesTab_Inactive
+Button_MarketTab_Active
   rotate: false
-  xy: 649, 83
+  xy: 540, 2
   size: 267, 228
   orig: 267, 228
   offset: 0, 0
@@ -275,64 +324,162 @@ Button_SellResource_Neutral
   orig: 823, 117
   offset: 0, 0
   index: -1
-Button_VolumeMute_Clicked
-  rotate: false
-  xy: 827, 886
-  size: 116, 129
-  orig: 116, 129
-  offset: 0, 0
-  index: -1
-Button_VolumeMute_Neutral
-  rotate: false
-  xy: 828, 624
-  size: 115, 129
-  orig: 115, 129
-  offset: 0, 0
-  index: -1
-Button_VolumeUnmute_Clicked
-  rotate: false
-  xy: 827, 755
-  size: 116, 129
-  orig: 116, 129
-  offset: 0, 0
-  index: -1
 
 images-packed4.png
-size: 778,254
+size: 950,951
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+BG_SelectedUpgrade
+  rotate: false
+  xy: 2, 698
+  size: 247, 253
+  orig: 247, 253
+  offset: 0, 0
+  index: -1
+Building_Nuclear_Power_Plant
+  rotate: false
+  xy: 789, 801
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Research_Lab
+  rotate: false
+  xy: 271, 571
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Steak_House
+  rotate: false
+  xy: 271, 419
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Water_Treatment_Plant
+  rotate: false
+  xy: 423, 571
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Wheat_Farm
+  rotate: false
+  xy: 271, 267
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Building_Winery
+  rotate: false
+  xy: 423, 419
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Button_BuyUpgrade_Clicked
+  rotate: false
+  xy: 423, 301
+  size: 141, 116
+  orig: 141, 116
+  offset: 0, 0
+  index: -1
+Button_BuyUpgrade_Neutral
+  rotate: false
+  xy: 575, 463
+  size: 141, 116
+  orig: 141, 116
+  offset: 0, 0
+  index: -1
 Button_MarketSlider_BuySide
   rotate: false
-  xy: 540, 2
+  xy: 271, 2
   size: 121, 121
   orig: 121, 121
   offset: 0, 0
   index: -1
 Button_MarketSlider_SellSide
   rotate: false
-  xy: 657, 133
+  xy: 575, 340
   size: 121, 121
   orig: 121, 121
   offset: 0, 0
   index: -1
+Button_MarketTab_Inactive
+  rotate: false
+  xy: 251, 723
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_PropertiesTab_Active
+  rotate: false
+  xy: 520, 723
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_PropertiesTab_Inactive
+  rotate: false
+  xy: 2, 468
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+Button_SellProperty_Clicked
+  rotate: false
+  xy: 575, 581
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+Button_SellProperty_Neutral
+  rotate: false
+  xy: 271, 125
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
 Button_UpgradesTab_Active
   rotate: false
-  xy: 2, 26
+  xy: 2, 238
   size: 267, 228
   orig: 267, 228
   offset: 0, 0
   index: -1
 Button_UpgradesTab_Inactive
   rotate: false
-  xy: 271, 26
+  xy: 2, 8
   size: 267, 228
   orig: 267, 228
   offset: 0, 0
   index: -1
+Button_VolumeMute_Clicked
+  rotate: false
+  xy: 717, 592
+  size: 116, 129
+  orig: 116, 129
+  offset: 0, 0
+  index: -1
+Button_VolumeMute_Neutral
+  rotate: false
+  xy: 718, 461
+  size: 115, 129
+  orig: 115, 129
+  offset: 0, 0
+  index: -1
+Button_VolumeUnmute_Clicked
+  rotate: false
+  xy: 698, 330
+  size: 116, 129
+  orig: 116, 129
+  offset: 0, 0
+  index: -1
 Button_VolumeUnmute_Neutral
   rotate: false
-  xy: 540, 125
+  xy: 835, 670
   size: 115, 129
   orig: 115, 129
   offset: 0, 0

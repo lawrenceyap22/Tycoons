@@ -15,13 +15,15 @@ public class GameState {
 	private Array<Property> properties;
 	private long[] resources;
 	private int nClicksForTech;
+	private int moneyPerClick;
 
 	private GameState() {
 		money = 0;
 		techs = 0;
+		moneyPerClick = 1;
 		properties = new Array<Property>();
 		resources = new long[Resource.values().length];
-		nClicksForTech = 200;
+		nClicksForTech = Tycoons.NUMBER_OF_CLICKS_FOR_TECH;
 	}
 
 	private static GameState newGame() {
@@ -30,7 +32,7 @@ public class GameState {
 	}
 
 	public static GameState loadGame() {
-		FileHandle file = Gdx.files.local("data/tycoons.sav");
+		FileHandle file = Gdx.files.local(Tycoons.SAVE_FILE);
 		if (file.exists()) {
 			Kryo kryo = new Kryo();
 			Input input = new Input(file.read());
@@ -42,7 +44,7 @@ public class GameState {
 	public boolean save() {
 		Output output = null;
 		try {
-			FileHandle file = Gdx.files.local("data/tycoons.sav");
+			FileHandle file = Gdx.files.local(Tycoons.SAVE_FILE);
 			Kryo kryo = new Kryo();
 			output = new Output(file.write(false));
 			kryo.writeObject(output, this);
@@ -52,6 +54,7 @@ public class GameState {
 			if (output != null)
 				output.close();
 		}
+		Gdx.app.log(Tycoons.TAG, "Saving...");
 		return true;
 	}
 
@@ -75,12 +78,20 @@ public class GameState {
 	public void subClicksForTech() {
 		nClicksForTech--;
 		if (nClicksForTech < 0) {
-			nClicksForTech = 200 + nClicksForTech;
+			nClicksForTech = Tycoons.NUMBER_OF_CLICKS_FOR_TECH + nClicksForTech;
 		}
+	}
+	
+	public int getNClicksForTech(){
+		return nClicksForTech;
 	}
 
 	public int getPropertiesSize() {
 		return properties.size;
+	}
+	
+	public Array<Property> getProperties(){
+		return properties;
 	}
 
 	public long getResource(Resource resource) {
@@ -89,6 +100,10 @@ public class GameState {
 
 	public void calculateResource(Resource resource, int size) {
 		resources[resource.getIndex()] += size;
+	}
+	
+	public int getMoneyPerClick(){
+		return moneyPerClick;
 	}
 
 }
