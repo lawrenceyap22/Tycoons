@@ -17,6 +17,8 @@ public class MarketSlider extends Group {
 	final TextureRegionDrawable knobSellDrawable;
 	int maxBuy;
 	int maxSell;
+	boolean isBuy;
+	int value;
 
 	public MarketSlider(int maxBuy, int maxSell, TextureRegion background,
 			TextureRegion knobBuyTextureRegion,
@@ -26,6 +28,8 @@ public class MarketSlider extends Group {
 		this.background = background;
 		knobBuyDrawable = new TextureRegionDrawable(knobBuyTextureRegion);
 		knobSellDrawable = new TextureRegionDrawable(knobSellTextureRegion);
+		isBuy = true;
+		value = 0;
 		setSize(background.getRegionWidth(), background.getRegionHeight());
 		addKnob();
 	}
@@ -34,7 +38,7 @@ public class MarketSlider extends Group {
 		knob = new Image(knobBuyDrawable);
 		knob.addListener(new ClickListener() {
 			float diffX;
-			
+
 			@Override
 			public boolean touchDown(InputEvent event, float x, float y,
 					int pointer, int button) {
@@ -50,16 +54,36 @@ public class MarketSlider extends Group {
 						getWidth() - knob.getWidth()));
 				if (knob.getX() < getWidth() / 2 - knob.getWidth() / 2) {
 					knob.setDrawable(knobSellDrawable);
+					isBuy = false;
+					value = (int) ((knob.getX() + knob.getWidth() / 2 + getX() - getCenterX())
+							/ (getCenterX() - getX()) * (maxSell + 2));
 				} else {
 					knob.setDrawable(knobBuyDrawable);
+					isBuy = true;
+					value = (int) ((knob.getX() + knob.getWidth() / 2 + getX() - getCenterX())
+							/ (getCenterX() - getX()) * (maxBuy + 2));
 				}
-				System.out.println((int) (knob.getX()
-						/ (getRight() - getCenterX()) * 10));
 			}
 
 		});
 		knob.setX(getCenterX() - knob.getWidth() / 2);
 		addActor(knob);
+	}
+
+	public boolean isBuy() {
+		return isBuy;
+	}
+
+	public void setMaxBuy(int maxBuy) {
+		this.maxBuy = maxBuy;
+	}
+
+	public void setMaxSell(int maxSell) {
+		this.maxSell = maxSell;
+	}
+
+	public int getValue() {
+		return value;
 	}
 
 	@Override

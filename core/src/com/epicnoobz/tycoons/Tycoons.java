@@ -11,7 +11,7 @@ import com.epicnoobz.tycoons.screens.PropertiesScreen;
 import com.epicnoobz.tycoons.screens.UpgradesScreen;
 
 public class Tycoons extends Game {
-	public static final boolean DEV_MODE = false;
+	public static final boolean DEV_MODE = true;
 	public static final String TAG = Tycoons.class.getSimpleName();
 	
 	public static final int NUMBER_OF_CLICKS_FOR_TECH = 200;
