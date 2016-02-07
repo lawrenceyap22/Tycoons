@@ -109,8 +109,8 @@ public class HomeScreen extends GameScreen {
 
 	private void initResearchBar() {
 		researchBar = new GameProgressBar(0, 200, 1,
-				atlas.findRegion("Bar_Research_BG"), new TextureRegion(
-						atlas.findRegion("Bar_Research_Full")), true);
+				atlas.findRegion("Bar_Research_BG"),
+				atlas.findRegion("Bar_Research_Full"), true);
 		researchBar.setPosition(coin.getRight() - 80, VIEWPORT_HEIGHT / 2
 				- researchBar.getHeight() / 2 - 50);
 		researchBar.setTouchable(Touchable.disabled);

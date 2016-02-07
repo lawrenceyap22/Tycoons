@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Array;
 import com.epicnoobz.tycoons.Tycoons;
 import com.epicnoobz.tycoons.objects.GameProgressBar;
 import com.epicnoobz.tycoons.objects.Property;
@@ -18,6 +19,7 @@ public class PropertiesScreen extends GameScreen {
 	GameProgressBar resourceCollect;
 	Group requires;
 	Group produces;
+	Array<GameProgressBar> timesToCollect;
 	Image sellProperty;
 
 	public PropertiesScreen(Tycoons game) {
@@ -42,10 +44,32 @@ public class PropertiesScreen extends GameScreen {
 	}
 
 	private void initProperties() {
+		properties = new Table();
+		properties.setSize(944, 1554);
+		properties.top();
+		ScrollPane scrollPane = new ScrollPane(properties);
+		scrollPane.setBounds(VIEWPORT_WIDTH / 2 - 472,
+				VIEWPORT_HEIGHT / 2 - 246, 944, 1036);
+		Array<Property> propertyList = game.state.getProperties();
+		Array<GameProgressBar> propertyProgressBars = new Array<GameProgressBar>(
+				propertyList.size);
+		for (Property property : propertyList) {
+			propertyProgressBars.add(new GameProgressBar(0, 60, property
+					.getTimeToCollect(),
+					atlas.findRegion("Bar_TimeLeft_Empty"), atlas
+							.findRegion("Bar_TimeLeft_Full"), false));
+		}
+
+		for (int i = 0; i < propertyList.size; i++) {
+
+		}
+
 		Property property = new Property("Coal Mine", 1, 10,
 				atlas.findRegion("Building_temp"));
-		properties = new Table();
-		ScrollPane scrollPane = new ScrollPane(properties);
+		GameProgressBar testBar = new GameProgressBar(0, 60, 1,
+				atlas.findRegion("Bar_TimeLeft_Empty"),
+				atlas.findRegion("Bar_TimeLeft_Full"), false);
+		testBar.setValue(30);
 		scrollPane.setBounds(VIEWPORT_WIDTH / 2 - 472,
 				VIEWPORT_HEIGHT / 2 - 246, 944, 1036);
 		// size based on building images + pads
@@ -56,8 +80,11 @@ public class PropertiesScreen extends GameScreen {
 		properties.add().width(68);
 		properties.add(new Image(property.getTexture())).pad(20, 1, 20, 1);
 		properties.row();
-		properties.add(new Image(atlas.findRegion("Bar_TimeLeft_Full"))).pad(0,
-				0, 20, 0);
+		properties.add(testBar).pad(0, 0, 20, 0);
+		testBar.setValue(50);
+		// properties.add(new
+		// Image(atlas.findRegion("Bar_TimeLeft_Full"))).pad(0,
+		// 0, 20, 0);
 		properties.add().width(68);
 		properties.add(new Image(atlas.findRegion("Bar_TimeLeft_Full")))
 				.padBottom(20);
@@ -149,7 +176,7 @@ public class PropertiesScreen extends GameScreen {
 
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				//TODO sell property
+				// TODO sell property
 			}
 
 		});

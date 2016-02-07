@@ -2,6 +2,7 @@ package com.epicnoobz.tycoons.objects;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -18,13 +19,20 @@ public class GameProgressBar extends Actor {
 	float stepSize;
 	float progressSize;
 
-	public GameProgressBar(float min, float max, float stepSize, Texture background, Texture progress,
-			boolean isVertical) {
-		this(min, max, stepSize, new TextureRegion(background), new TextureRegion(progress), isVertical);
+	public GameProgressBar(float min, float max, float stepSize,
+			Texture background, Texture progress, boolean isVertical) {
+		this(min, max, stepSize, new TextureRegion(background),
+				new TextureRegion(progress), isVertical);
 	}
 
-	public GameProgressBar(float min, float max, float stepSize, TextureRegion background, TextureRegion progress,
-			boolean isVertical) {
+	public GameProgressBar(float min, float max, float stepSize,
+			AtlasRegion background, AtlasRegion progress, boolean isVertical) {
+		this(min, max, stepSize, new TextureRegion(background),
+				new TextureRegion(progress), isVertical);
+	}
+
+	public GameProgressBar(float min, float max, float stepSize,
+			TextureRegion background, TextureRegion progress, boolean isVertical) {
 		if (min > max)
 			throw new IllegalArgumentException("min must be < max");
 		if (stepSize <= 0)
@@ -35,9 +43,11 @@ public class GameProgressBar extends Actor {
 		this.background = background;
 		this.progress = progress;
 		this.isVertical = isVertical;
-		this.progressSize = isVertical ? progress.getRegionHeight() : progress.getRegionWidth();
+		this.progressSize = isVertical ? progress.getRegionHeight() : progress
+				.getRegionWidth();
 		this.highlight = null;
-		setBounds(0, 0, background.getRegionWidth(), background.getRegionHeight());
+		setBounds(0, 0, background.getRegionWidth(),
+				background.getRegionHeight());
 		setValue(min);
 	}
 
@@ -55,13 +65,15 @@ public class GameProgressBar extends Actor {
 
 	public void setValue(float value) {
 		if (value % stepSize != 0)
-			throw new IllegalArgumentException("value must be a factor of stepSize");
+			throw new IllegalArgumentException(
+					"value must be a factor of stepSize");
 		this.value = MathUtils.clamp(value, min, max);
 		if (isVertical) {
-			progress.setV(progress.getV2() - (value - min) / (max - min) * progressSize
-					/ progress.getTexture().getHeight());
+			progress.setV(progress.getV2() - (value - min) / (max - min)
+					* progressSize / progress.getTexture().getHeight());
 		} else {
-			progress.setU2((value - min) / (max - min) * progressSize / progress.getTexture().getWidth());
+			progress.setU2(progress.getU() + (value - min) / (max - min)
+					* progressSize / progress.getTexture().getWidth());
 		}
 	}
 
