@@ -19,6 +19,8 @@ public class GameProgressBar extends Actor {
 	float stepSize;
 	float progressSize;
 
+	public GameProgressBar(){
+	}
 	public GameProgressBar(float min, float max, float stepSize,
 			Texture background, Texture progress, boolean isVertical) {
 		this(min, max, stepSize, new TextureRegion(background),
