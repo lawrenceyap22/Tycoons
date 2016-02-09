@@ -1,7 +1,10 @@
 package com.epicnoobz.tycoons.objects;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
@@ -18,6 +21,8 @@ public class GameProgressBar extends Actor {
 	float max;
 	float stepSize;
 	float progressSize;
+	BitmapFont font;
+	String text;
 
 	public GameProgressBar(){
 	}
@@ -89,11 +94,31 @@ public class GameProgressBar extends Actor {
 		return false;
 	}
 
+	public void setFont(BitmapFont font) {
+		this.font = font;
+	}
+
+	public void setText(String text) {
+		if (font == null) {
+			throw new IllegalStateException(
+					"Set the font first before setting the text.");
+		}
+		this.text = text;
+	}
+
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		batch.draw(background, getX(), getY());
 		batch.draw(progress, getX(), getY());
 		if (highlight != null)
 			batch.draw(highlight, getX(), getY());
+
+		if (text != null && !text.isEmpty()) {
+			font.setColor(Color.WHITE);
+			font.setScale(1f);
+			TextBounds bounds = font.getBounds(text);
+			font.draw(batch, text, getCenterX() - bounds.width / 2,
+					getCenterY() + bounds.height / 2);
+		}
 	}
 }
