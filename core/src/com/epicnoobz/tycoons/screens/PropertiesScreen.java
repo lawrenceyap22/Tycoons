@@ -187,7 +187,7 @@ public class PropertiesScreen extends GameScreen {
 			if(property.getShouldStartProduction()){
 				property.setTimeElapsed();
 				productionProgress.setValue((float)Math.ceil(property.getTimeElapsed()));
-				productionProgress.setFont(new BitmapFont(Gdx.files.internal("font/tycoons.fnt")));
+				productionProgress.setFont(game.assetManager.get("font/tycoons.fnt", BitmapFont.class));
 				productionProgress.setText(property.getTimeRemainingString());
 			}
 		}
