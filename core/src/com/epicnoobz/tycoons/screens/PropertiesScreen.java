@@ -1,9 +1,5 @@
 package com.epicnoobz.tycoons.screens;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -18,7 +14,6 @@ import com.badlogic.gdx.utils.Array;
 import com.epicnoobz.tycoons.Tycoons;
 import com.epicnoobz.tycoons.objects.GameProgressBar;
 import com.epicnoobz.tycoons.objects.Property;
-import com.esotericsoftware.minlog.Log;
 
 public class PropertiesScreen extends GameScreen {
 
@@ -186,7 +181,7 @@ public class PropertiesScreen extends GameScreen {
 			GameProgressBar productionProgress = property.getProductionProgress();
 			if(property.getShouldStartProduction()){
 				property.setTimeElapsed();
-				productionProgress.setValue((float)Math.ceil(property.getTimeElapsed()));
+				productionProgress.setValue(property.getTimeElapsed());
 				productionProgress.setFont(game.assetManager.get("font/tycoons.fnt", BitmapFont.class));
 				productionProgress.setText(property.getTimeRemainingString());
 			}

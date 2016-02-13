@@ -1,21 +1,17 @@
 package com.epicnoobz.tycoons.objects;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.TimeUtils;
-import com.epicnoobz.tycoons.Tycoons;
-import com.epicnoobz.tycoons.screens.AbstractScreen;
 
 public class Property {
 	private String name;
 	private int level;
 	private boolean shouldStartProduction = true;
 	private float timeToCollect;
-	private double timeElapsed;
-	private double timeRemaining;
+	private float timeElapsed;
+	private float timeRemaining;
 	private String timeRemainingString;
 	private Array<ArrayMap<Resource, Integer>> requirements;
 	private Array<ArrayMap<Resource, Integer>> products;
@@ -37,7 +33,7 @@ public class Property {
 	
 	public void setTimeElapsed(){
 		if(timeElapsed != timeToCollect){
-			timeElapsed = convertToSeconds("milliseconds",TimeUtils.timeSinceMillis(startTime));
+			timeElapsed = (float)Math.ceil(convertToSeconds("milliseconds",TimeUtils.timeSinceMillis(startTime)));
 		}
 		
 		timeRemaining = timeToCollect - timeElapsed;
@@ -80,12 +76,15 @@ public class Property {
 		if(seconds > 0){
 			timeRemainingString += seconds + "S ";
 		}
+		else if(seconds == 0 && minutes == 0){
+			timeRemainingString += "0S";
+		}
 		if(timeRemaining == 0){
 			timeRemainingString = "COLLECT";
 		}
 	}
 	
-	public double convertToSeconds(String type, double value){
+	public float convertToSeconds(String type, float value){
 		if(type.equals("minutes")){
 			return value * 60;
 		}
@@ -95,7 +94,7 @@ public class Property {
 		return value;
 	}
 	
-	public double getTimeElapsed() {
+	public float getTimeElapsed() {
 		return timeElapsed;
 	}
 	
@@ -115,7 +114,7 @@ public class Property {
 		return productionProgress;
 	}
 
-	public double getTimeRemaining() {
+	public float getTimeRemaining() {
 		return timeRemaining;
 	}
 	
