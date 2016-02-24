@@ -1,5 +1,6 @@
 package com.epicnoobz.tycoons.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -11,9 +12,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ArrayMap;
+import com.badlogic.gdx.utils.ArrayMap.Entries;
+import com.badlogic.gdx.utils.ObjectMap.Entry;
 import com.epicnoobz.tycoons.Tycoons;
 import com.epicnoobz.tycoons.objects.GameProgressBar;
 import com.epicnoobz.tycoons.objects.Property;
+import com.epicnoobz.tycoons.objects.Resource;
+import com.epicnoobz.tycoons.objects.ResourcesDrawer;
 
 public class PropertiesScreen extends GameScreen {
 
@@ -47,16 +53,41 @@ public class PropertiesScreen extends GameScreen {
 	}
 	
 	private void initProperties(){
+		final ResourcesDrawer resourcesDrawer = game.home.resourcesDrawer;
+		
 		properties = game.state.getProperties();
-		properties.add(new Property("Coal Mine",1,100,atlas.findRegion("Building_Coal_Mine")));
+		properties.add(new Property("Coal Mine",1,5,atlas.findRegion("Building_Coal_Mine")));
 		properties.add(new Property("Cattle Farm",1,10,atlas.findRegion("Building_Cattle_Farm")));
-		properties.add(new Property("Bakery",1,1000,atlas.findRegion("Building_Bakery")));
-		properties.add(new Property("Bar",1,500,atlas.findRegion("Building_Bar")));
-		properties.add(new Property("Fruit Orchard",1,300,atlas.findRegion("Building_Fruit_Orchard")));
-		properties.add(new Property("Green House",1,400,atlas.findRegion("Building_Green_House")));
-		properties.add(new Property("Metal Ore Mine",1,200,atlas.findRegion("Building_Metal_Ore_Mine")));
-		for (Property property : properties) {
+		properties.add(new Property("Bakery",1,20,atlas.findRegion("Building_Bakery")));
+		properties.add(new Property("Bar",1,50,atlas.findRegion("Building_Bar")));
+		properties.add(new Property("Fruit Orchard",1,40,atlas.findRegion("Building_Fruit_Orchard")));
+		properties.add(new Property("Green House",1,200,atlas.findRegion("Building_Green_House")));
+		properties.add(new Property("Metal Ore Mine",1,30,atlas.findRegion("Building_Metal_Ore_Mine")));
+		
+		for (final Property property : properties) {
 			property.initProductionProgressBar(new TextureRegion(atlas.findRegion("Bar_TimeLeft_Empty")), new TextureRegion(atlas.findRegion("Bar_TimeLeft_Full")));
+			property.getProductionProgressBar().addListener(new ClickListener() {
+				@Override
+				public void clicked(InputEvent event, float x, float y) {
+					if(property.getTimeRemainingString().equals("COLLECT")){
+						ArrayMap<Resource, Integer> products = property.getProducts();
+						Entries<Resource, Integer> productEntries = products.entries();
+						while(productEntries.hasNext()){
+							Entry<Resource, Integer> product = productEntries.next();
+							Resource resource = product.key;
+							int quantity = product.value;
+							if(resource != Resource.CASH){
+								resourcesDrawer.setResource(resourcesDrawer.getResource(resource)+quantity, resource);
+							}
+							else{
+								game.state.calculateMoney(quantity);
+							}
+						}
+						property.registerStartTime();
+						property.setTimeElapsed(0);
+					}
+				}
+			});
 			property.registerStartTime();
 		}
 	}
@@ -80,7 +111,7 @@ public class PropertiesScreen extends GameScreen {
 				}
 				propertiesTable.add(new Image(property.getTexture())).pad(20, 1, 20, 1);
 				propertiesTable.add().width(68);
-				leftPropertyProgressBar = property.getProductionProgress();
+				leftPropertyProgressBar = property.getProductionProgressBar();
 			}
 			//add property at the right side and add the progress bars for left and right side
 			else{
@@ -89,7 +120,7 @@ public class PropertiesScreen extends GameScreen {
 				propertiesTable.add(leftPropertyProgressBar).pad(0,
 						0, 20, 0);
 				propertiesTable.add().width(68);
-				propertiesTable.add(property.getProductionProgress()).padBottom(20);
+				propertiesTable.add(property.getProductionProgressBar()).padBottom(20);
 			}
 			property_ctr++;
 		}
@@ -178,7 +209,7 @@ public class PropertiesScreen extends GameScreen {
 	public void render(float delta) {
 		super.render(delta);
 		for (Property property : properties) {
-			GameProgressBar productionProgress = property.getProductionProgress();
+			GameProgressBar productionProgress = property.getProductionProgressBar();
 			if(property.getShouldStartProduction()){
 				property.setTimeElapsed();
 				productionProgress.setValue(property.getTimeElapsed());

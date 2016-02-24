@@ -109,8 +109,11 @@ public class ResourcesDrawer extends Group {
 		return resourceList.getRegionHeight() + getResourceListOffset();
 	}
 
-	public void setResources(int n, Resource resource) {
+	public void setResource(long n, Resource resource) {
 		ownedResources[resource.getIndex()] = n;
+	}
+	public long getResource(Resource resource){
+		return ownedResources[resource.getIndex()];
 	}
 
 	public boolean isOpen() {
