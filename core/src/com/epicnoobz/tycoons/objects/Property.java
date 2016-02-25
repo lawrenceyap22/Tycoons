@@ -40,7 +40,7 @@ public class Property {
 	
 	public void setTimeElapsed(){
 		if(timeElapsed != timeToCollect){
-			timeElapsed = (float)Math.ceil(convertToSeconds("milliseconds",TimeUtils.timeSinceMillis(startTime)));
+			timeElapsed = (float)Math.floor(convertToSeconds("milliseconds",TimeUtils.timeSinceMillis(startTime)));
 		}
 		
 		timeRemaining = timeToCollect - timeElapsed;
