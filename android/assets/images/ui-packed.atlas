@@ -1,0 +1,460 @@
+
+ui-packed.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bg_all
+  rotate: false
+  xy: 2, 125
+  size: 1081, 1921
+  orig: 1081, 1921
+  offset: 0, 0
+  index: -1
+button_buy_property_clicked
+  rotate: false
+  xy: 1085, 1513
+  size: 436, 386
+  orig: 436, 386
+  offset: 0, 0
+  index: -1
+button_buy_property_default
+  rotate: false
+  xy: 1085, 738
+  size: 435, 386
+  orig: 435, 386
+  offset: 0, 0
+  index: -1
+button_buy_resource_default
+  rotate: false
+  xy: 248, 6
+  size: 823, 117
+  orig: 823, 117
+  offset: 0, 0
+  index: -1
+button_buy_upgrade_clicked
+  rotate: false
+  xy: 1898, 1391
+  size: 141, 116
+  orig: 141, 116
+  offset: 0, 0
+  index: -1
+button_buy_upgrade_default
+  rotate: false
+  xy: 1898, 1273
+  size: 141, 116
+  orig: 141, 116
+  offset: 0, 0
+  index: -1
+button_home_tab_active
+  rotate: false
+  xy: 1525, 1818
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_home_tab_inactive
+  rotate: false
+  xy: 1523, 1588
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_market_tab_active
+  rotate: false
+  xy: 1523, 1358
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_market_tab_inactive
+  rotate: false
+  xy: 1523, 1128
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_muted_sound_clicked
+  rotate: false
+  xy: 1085, 296
+  size: 116, 129
+  orig: 116, 129
+  offset: 0, 0
+  index: -1
+button_muted_sound_default
+  rotate: false
+  xy: 1321, 296
+  size: 115, 129
+  orig: 115, 129
+  offset: 0, 0
+  index: -1
+button_properties_tab_active
+  rotate: false
+  xy: 1523, 898
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_properties_tab_inactive
+  rotate: false
+  xy: 1522, 668
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_resource_drawer_down
+  rotate: false
+  xy: 1085, 130
+  size: 185, 76
+  orig: 185, 76
+  offset: 0, 0
+  index: -1
+button_resource_drawer_up
+  rotate: false
+  xy: 1272, 130
+  size: 185, 76
+  orig: 185, 76
+  offset: 0, 0
+  index: -1
+button_sell_property_clicked
+  rotate: false
+  xy: 1898, 1131
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+button_sell_property_default
+  rotate: false
+  xy: 1898, 989
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+button_sell_resource_default
+  rotate: false
+  xy: 1073, 6
+  size: 823, 117
+  orig: 823, 117
+  offset: 0, 0
+  index: -1
+button_unmuted_sound_clicked
+  rotate: false
+  xy: 1203, 296
+  size: 116, 129
+  orig: 116, 129
+  offset: 0, 0
+  index: -1
+button_upgrades_tab_active
+  rotate: false
+  xy: 1483, 438
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+button_upgrades_tab_inactive
+  rotate: false
+  xy: 1483, 208
+  size: 267, 228
+  orig: 267, 228
+  offset: 0, 0
+  index: -1
+icon_money
+  rotate: false
+  xy: 1898, 1759
+  size: 142, 123
+  orig: 142, 123
+  offset: 0, 0
+  index: -1
+icon_properties
+  rotate: false
+  xy: 1898, 1509
+  size: 141, 123
+  orig: 141, 123
+  offset: 0, 0
+  index: -1
+icon_research
+  rotate: false
+  xy: 1898, 1634
+  size: 142, 123
+  orig: 142, 123
+  offset: 0, 0
+  index: -1
+panel_produced_resource
+  rotate: false
+  xy: 1085, 427
+  size: 396, 309
+  orig: 396, 309
+  offset: 0, 0
+  index: -1
+panel_selected_property
+  rotate: false
+  xy: 1085, 1126
+  size: 436, 385
+  orig: 436, 385
+  offset: 0, 0
+  index: -1
+panel_selected_resource
+  rotate: false
+  xy: 1898, 1884
+  size: 147, 162
+  orig: 147, 162
+  offset: 0, 0
+  index: -1
+progress_property_time_empty
+  rotate: false
+  xy: 1085, 1901
+  size: 438, 71
+  orig: 438, 71
+  offset: 0, 0
+  index: -1
+progress_property_time_full
+  rotate: false
+  xy: 1085, 1974
+  size: 438, 72
+  orig: 438, 72
+  offset: 0, 0
+  index: -1
+progress_research_bar
+  rotate: false
+  xy: 1898, 32
+  size: 101, 955
+  orig: 101, 955
+  offset: 0, 0
+  index: -1
+progress_research_empty
+  rotate: false
+  xy: 1794, 1091
+  size: 101, 955
+  orig: 101, 955
+  offset: 0, 0
+  index: -1
+progress_research_mask
+  rotate: false
+  xy: 1792, 134
+  size: 101, 955
+  orig: 101, 955
+  offset: 0, 0
+  index: -1
+slider_market_button_buy
+  rotate: false
+  xy: 2, 2
+  size: 121, 121
+  orig: 121, 121
+  offset: 0, 0
+  index: -1
+slider_market_button_sell
+  rotate: false
+  xy: 125, 2
+  size: 121, 121
+  orig: 121, 121
+  offset: 0, 0
+  index: -1
+
+ui-packed2.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bg_home_tab
+  rotate: false
+  xy: 104, 2
+  size: 1066, 852
+  orig: 1066, 852
+  offset: 0, 0
+  index: -1
+bg_upgrade_more
+  rotate: false
+  xy: 989, 856
+  size: 985, 505
+  orig: 985, 505
+  offset: 0, 0
+  index: -1
+button_buy_resource_clicked
+  rotate: false
+  xy: 2, 1864
+  size: 823, 116
+  orig: 823, 116
+  offset: 0, 0
+  index: -1
+button_sell_resource_clicked
+  rotate: false
+  xy: 2, 1733
+  size: 824, 116
+  orig: 824, 116
+  offset: 0, 0
+  index: -1
+button_unmuted_sound_default
+  rotate: false
+  xy: 827, 1851
+  size: 115, 129
+  orig: 115, 129
+  offset: 0, 0
+  index: -1
+divider_property_market
+  rotate: false
+  xy: 2, 1982
+  size: 986, 26
+  orig: 986, 26
+  offset: 0, 0
+  index: -1
+panel_required_resource
+  rotate: false
+  xy: 1243, 1363
+  size: 396, 309
+  orig: 396, 309
+  offset: 0, 0
+  index: -1
+panel_selected_upgrade
+  rotate: false
+  xy: 994, 1419
+  size: 247, 253
+  orig: 247, 253
+  offset: 0, 0
+  index: -1
+panel_upgrade
+  rotate: false
+  xy: 2, 1004
+  size: 985, 477
+  orig: 985, 477
+  offset: 0, 0
+  index: -1
+progress_research_highlight
+  rotate: false
+  xy: 2, 47
+  size: 100, 955
+  orig: 100, 955
+  offset: 0, 0
+  index: -1
+progress_resource_collected_empty
+  rotate: false
+  xy: 990, 1898
+  size: 1016, 110
+  orig: 1016, 110
+  offset: 0, 0
+  index: -1
+progress_resource_collected_full
+  rotate: false
+  xy: 944, 1786
+  size: 1016, 110
+  orig: 1016, 110
+  offset: 0, 0
+  index: -1
+progress_resource_collected_highlight
+  rotate: false
+  xy: 828, 1674
+  size: 1016, 110
+  orig: 1016, 110
+  offset: 0, 0
+  index: -1
+slider_market
+  rotate: false
+  xy: 2, 1483
+  size: 990, 189
+  orig: 990, 189
+  offset: 0, 0
+  index: -1
+
+ui-packed3.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bg_upgrade
+  rotate: false
+  xy: 2, 14
+  size: 985, 1011
+  orig: 985, 1011
+  offset: 0, 0
+  index: -1
+resource_drawer_list_mask
+  rotate: false
+  xy: 989, 2
+  size: 986, 1023
+  orig: 986, 1023
+  offset: 0, 0
+  index: -1
+
+ui-packed4.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+button_coin_clicked
+  rotate: false
+  xy: 2, 548
+  size: 1056, 1056
+  orig: 1056, 1056
+  offset: 0, 0
+  index: -1
+resource_list
+  rotate: false
+  xy: 1060, 2
+  size: 986, 1602
+  orig: 986, 1602
+  offset: 0, 0
+  index: -1
+
+ui-packed5.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+resource_drawer_mask
+  rotate: false
+  xy: 2, 2
+  size: 1066, 1758
+  orig: 1066, 1758
+  offset: 0, 0
+  index: -1
+
+ui-packed6.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+resource_drawer
+  rotate: false
+  xy: 2, 2
+  size: 1066, 1757
+  orig: 1066, 1757
+  offset: 0, 0
+  index: -1
+
+ui-packed7.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bg_tab
+  rotate: false
+  xy: 2, 2
+  size: 1066, 1718
+  orig: 1066, 1718
+  offset: 0, 0
+  index: -1
+
+ui-packed8.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+resource_drawer_list
+  rotate: false
+  xy: 2, 2
+  size: 1065, 1482
+  orig: 1065, 1482
+  offset: 0, 0
+  index: -1
+
+ui-packed9.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+button_coin_default
+  rotate: false
+  xy: 2, 2
+  size: 1056, 1056
+  orig: 1056, 1056
+  offset: 0, 0
+  index: -1

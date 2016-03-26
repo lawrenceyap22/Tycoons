@@ -1,0 +1,146 @@
+
+properties-packed.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+automotive_assembly_plant
+  rotate: false
+  xy: 2, 610
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+bakery
+  rotate: false
+  xy: 155, 763
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+bar
+  rotate: false
+  xy: 2, 458
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+cattle_farm
+  rotate: false
+  xy: 307, 763
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+coal_mine
+  rotate: false
+  xy: 2, 306
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+coffee_farm
+  rotate: false
+  xy: 459, 763
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+cotton_farm
+  rotate: false
+  xy: 2, 154
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+delivery_center
+  rotate: false
+  xy: 611, 763
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+fine_dining_restaurant
+  rotate: false
+  xy: 2, 2
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+fruit_orchard
+  rotate: false
+  xy: 763, 763
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+green_house
+  rotate: false
+  xy: 154, 610
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+hydroelectric_power_plant
+  rotate: false
+  xy: 154, 458
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+metal_ore_mine
+  rotate: false
+  xy: 154, 306
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+nuclear_power_plant
+  rotate: false
+  xy: 154, 154
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+research_lab
+  rotate: false
+  xy: 154, 2
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+steak_house
+  rotate: false
+  xy: 306, 611
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+uranium_ore_mine
+  rotate: false
+  xy: 2, 762
+  size: 151, 151
+  orig: 151, 151
+  offset: 0, 0
+  index: -1
+water_treatment_plant
+  rotate: false
+  xy: 306, 459
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+wheat_farm
+  rotate: false
+  xy: 458, 611
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+winery
+  rotate: false
+  xy: 306, 307
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
